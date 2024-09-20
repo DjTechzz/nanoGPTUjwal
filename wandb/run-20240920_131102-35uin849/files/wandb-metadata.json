@@ -1,0 +1,20 @@
+{
+  "os": "macOS-14.1-arm64-arm-64bit",
+  "python": "3.10.0",
+  "startedAt": "2024-09-20T04:11:02.748889Z",
+  "args": [
+    "config/enwik_ASAD_train.py"
+  ],
+  "program": "/Users/ujwal/Desktop/sakana_ai_sol/nanoGPTUjwal/train.py",
+  "codePath": "train.py",
+  "git": {
+    "remote": "https://github.com/DjTechzz/nanoGPTUjwal.git",
+    "commit": "9755682b981a45507f6eb9b11eadef8cb83cebd5"
+  },
+  "email": "ujwal.kumar252@gmail.com",
+  "root": "/Users/ujwal/Desktop/sakana_ai_sol/nanoGPTUjwal",
+  "host": "Ujwals-MacBook-Pro.local",
+  "username": "ujwal",
+  "executable": "/Users/ujwal/.pyenv/versions/3.10.0/bin/python",
+  "codePathLocal": "train.py"
+}

@@ -1,0 +1,18 @@
+{"time":"2024-09-20T16:14:49.986617+09:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-20T16:14:49.986684+09:00","level":"INFO","msg":"created symlink","path":"/Users/ujwal/Desktop/sakana_ai_sol/nanoGPTUjwal/wandb/run-20240920_161449-toeclm08/logs/debug-core.log"}
+{"time":"2024-09-20T16:14:49.98675+09:00","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-20T16:14:49.986757+09:00","level":"INFO","msg":"created symlink","path":"/Users/ujwal/Desktop/sakana_ai_sol/nanoGPTUjwal/wandb/run-20240920_161449-toeclm08/logs/debug-core.log"}
+{"time":"2024-09-20T16:14:49.994807+09:00","level":"INFO","msg":"created new stream","id":"toeclm08"}
+{"time":"2024-09-20T16:14:49.994854+09:00","level":"INFO","msg":"stream: started","id":"toeclm08"}
+{"time":"2024-09-20T16:14:49.994882+09:00","level":"INFO","msg":"handler: started","stream_id":{"value":"toeclm08"}}
+{"time":"2024-09-20T16:14:49.995292+09:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"toeclm08"}}
+{"time":"2024-09-20T16:14:49.995534+09:00","level":"INFO","msg":"sender: started","stream_id":{"value":"toeclm08"}}
+{"time":"2024-09-20T16:14:51.706692+09:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-20T16:14:51.709476+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-20T16:14:52.283734+09:00","level":"INFO","msg":"stream: closing","id":"toeclm08"}
+{"time":"2024-09-20T16:14:52.283755+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-20T16:14:52.28378+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-20T16:14:53.361207+09:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"toeclm08"}}
+{"time":"2024-09-20T16:14:53.361188+09:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"toeclm08"}}
+{"time":"2024-09-20T16:14:53.361202+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"toeclm08"}}
+{"time":"2024-09-20T16:14:53.36163+09:00","level":"INFO","msg":"stream: closed","id":"toeclm08"}

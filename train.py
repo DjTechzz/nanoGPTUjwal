@@ -32,6 +32,7 @@ from model import GPTConfig, GPT
 # -----------------------------------------------------------------------------
 # default config values designed to train a gpt2 (124M) on OpenWebText
 # I/O
+mps_available = hasattr(torch.backends, "mps") and torch.backends.mps.is_available()
 out_dir = 'out'
 eval_interval = 2000
 log_interval = 1

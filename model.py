@@ -49,6 +49,32 @@ class CausalSelfAttention(nn.Module):
             self.register_buffer("bias", torch.tril(torch.ones(config.block_size, config.block_size))
                                         .view(1, 1, config.block_size, config.block_size))
 
+class AdaptiveSparseAttention(nn.Module): # ASADP New Modification
+    def __init__(self, config):
+        super().__init__()
+        assert config.n_embd % config.n_head == 0
+        # key, query, value projections for all heads, but in a batch
+        self.c_attn = nn.Linear(config.n_embd, 3 * config.n_embd, bias=config.bias)
+        # output projection
+        self.c_proj = nn.Linear(config.n_embd, config.n_embd, bias=config.bias)
+        # regularization
+        self.attn_dropout = nn.Dropout(config.dropout)
+        self.resid_dropout = nn.Dropout(config.dropout)
+        self.n_head = config.n_head
+        self.n_embd = config.n_embd
+        self.dropout = config.dropout
+        # Learnable importance scores for each head
+        self.head_importance = nn.Parameter(torch.ones(config.n_head))
+        # Minimum number of heads to keep
+        self.min_heads = max(1, config.n_head // 4)
+        # flash attention make GPU go brrrrr but support is only in PyTorch >= 2.0
+        self.flash = hasattr(torch.nn.functional, 'scaled_dot_product_attention')
+        if not self.flash:
+            print("WARNING: using slow attention. Flash Attention requires PyTorch >= 2.0")
+            # causal mask to ensure that attention is only applied to the left in the input sequence
+            self.register_buffer("bias", torch.tril(torch.ones(config.block_size, config.block_size))
+                                        .view(1, 1, config.block_size, config.block_size))
+
     def forward(self, x):
         B, T, C = x.size() # batch size, sequence length, embedding dimensionality (n_embd)
 
@@ -71,6 +97,14 @@ class CausalSelfAttention(nn.Module):
             y = att @ v # (B, nh, T, T) x (B, nh, T, hs) -> (B, nh, T, hs)
         y = y.transpose(1, 2).contiguous().view(B, T, C) # re-assemble all head outputs side by side
 
+        # Adaptive pruning
+        importance = self.head_importance.softmax(dim=0)
+        n_keep = max(self.min_heads, int(self.n_head * (1 - x.var().item())))
+        _, top_indices = torch.topk(importance, k=n_keep)
+        mask = torch.zeros_like(importance).scatter_(0, top_indices, 1.0)
+        y = y.view(B, T, self.n_head, -1) * mask.view(1, 1, -1, 1)
+        y = y.view(B, T, C)
+
         # output projection
         y = self.resid_dropout(self.c_proj(y))
         return y
@@ -91,13 +125,26 @@ class MLP(nn.Module):
         x = self.dropout(x)
         return x
 
-class Block(nn.Module):
+class Block_Old(nn.Module):
 
     def __init__(self, config):
         super().__init__()
         self.ln_1 = LayerNorm(config.n_embd, bias=config.bias)
         self.attn = CausalSelfAttention(config)
         self.ln_2 = LayerNorm(config.n_embd, bias=config.bias)
+        self.mlp = MLP(config)
+
+    def forward(self, x):
+        x = x + self.attn(self.ln_1(x))
+        x = x + self.mlp(self.ln_2(x))
+        return x
+
+class Block(nn.Module):
+    def __init__(self, config):
+        super().__init__()
+        self.ln_1 = nn.LayerNorm(config.n_embd)
+        self.attn = AdaptiveSparseAttention(config)
+        self.ln_2 = nn.LayerNorm(config.n_embd)
         self.mlp = MLP(config)
 
     def forward(self, x):
@@ -114,6 +161,7 @@ class GPTConfig:
     n_embd: int = 768
     dropout: float = 0.0
     bias: bool = True # True: bias in Linears and LayerNorms, like GPT-2. False: a bit better and faster
+    
 
 class GPT(nn.Module):
 

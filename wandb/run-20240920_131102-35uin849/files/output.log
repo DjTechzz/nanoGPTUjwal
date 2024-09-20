@@ -1,0 +1,155 @@
+Traceback (most recent call last):
+  File "/Users/ujwal/Desktop/sakana_ai_sol/nanoGPTUjwal/train.py", line 264, in <module>
+    losses = estimate_loss()
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/Users/ujwal/Desktop/sakana_ai_sol/nanoGPTUjwal/train.py", line 224, in estimate_loss
+    logits, loss = model(X, Y)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 451, in _fn
+    return fn(*args, **kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py", line 921, in catch_errors
+    return callback(frame, cache_entry, hooks, frame_state, skip=1)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py", line 786, in _convert_frame
+    result = inner_convert(
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py", line 400, in _convert_frame_assert
+    return _compile(
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py", line 703, in _compile
+    raise InternalTorchDynamoError(str(e)).with_traceback(
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py", line 676, in _compile
+    guarded_code = compile_inner(code, one_graph, hooks, transform)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/utils.py", line 262, in time_wrapper
+    r = func(*args, **kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py", line 535, in compile_inner
+    out_code = transform_code_object(code, transform)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/bytecode_transformation.py", line 1036, in transform_code_object
+    transformations(instructions, code_options)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py", line 165, in _fn
+    return fn(*args, **kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/convert_frame.py", line 500, in transform
+    tracer.run()
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 2149, in run
+    super().run()
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 810, in run
+    and self.step()
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 773, in step
+    getattr(self, inst.opname)(inst)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 489, in wrapper
+    return inner_fn(self, inst)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 1219, in CALL_FUNCTION
+    self.call_function(fn, args, {})
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 674, in call_function
+    self.push(fn.call_function(self, args, kwargs))
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/variables/nn_module.py", line 336, in call_function
+    return tx.inline_user_function_return(
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 680, in inline_user_function_return
+    return InliningInstructionTranslator.inline_call(self, fn, args, kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 2285, in inline_call
+    return cls.inline_call_(parent, func, args, kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 2399, in inline_call_
+    tracer.run()
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 810, in run
+    and self.step()
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 773, in step
+    getattr(self, inst.opname)(inst)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 489, in wrapper
+    return inner_fn(self, inst)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 1260, in CALL_FUNCTION_EX
+    self.call_function(fn, argsvars.items, kwargsvars)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 674, in call_function
+    self.push(fn.call_function(self, args, kwargs))
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/variables/functions.py", line 335, in call_function
+    return super().call_function(tx, args, kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/variables/functions.py", line 289, in call_function
+    return super().call_function(tx, args, kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/variables/functions.py", line 90, in call_function
+    return tx.inline_user_function_return(
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 680, in inline_user_function_return
+    return InliningInstructionTranslator.inline_call(self, fn, args, kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 2285, in inline_call
+    return cls.inline_call_(parent, func, args, kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 2399, in inline_call_
+    tracer.run()
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 810, in run
+    and self.step()
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 773, in step
+    getattr(self, inst.opname)(inst)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 489, in wrapper
+    return inner_fn(self, inst)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 1219, in CALL_FUNCTION
+    self.call_function(fn, args, {})
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 674, in call_function
+    self.push(fn.call_function(self, args, kwargs))
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/variables/nn_module.py", line 336, in call_function
+    return tx.inline_user_function_return(
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 680, in inline_user_function_return
+    return InliningInstructionTranslator.inline_call(self, fn, args, kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 2285, in inline_call
+    return cls.inline_call_(parent, func, args, kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 2399, in inline_call_
+    tracer.run()
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 810, in run
+    and self.step()
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 773, in step
+    getattr(self, inst.opname)(inst)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 489, in wrapper
+    return inner_fn(self, inst)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 1260, in CALL_FUNCTION_EX
+    self.call_function(fn, argsvars.items, kwargsvars)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 674, in call_function
+    self.push(fn.call_function(self, args, kwargs))
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/variables/functions.py", line 335, in call_function
+    return super().call_function(tx, args, kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/variables/functions.py", line 289, in call_function
+    return super().call_function(tx, args, kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/variables/functions.py", line 90, in call_function
+    return tx.inline_user_function_return(
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 680, in inline_user_function_return
+    return InliningInstructionTranslator.inline_call(self, fn, args, kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 2285, in inline_call
+    return cls.inline_call_(parent, func, args, kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 2399, in inline_call_
+    tracer.run()
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 810, in run
+    and self.step()
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 773, in step
+    getattr(self, inst.opname)(inst)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/symbolic_convert.py", line 1311, in LOAD_ATTR
+    result = BuiltinVariable(getattr).call_function(
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/variables/builtin.py", line 687, in call_function
+    result = handler(tx, *args, **kwargs)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/variables/builtin.py", line 1265, in call_getattr
+    return obj.var_getattr(tx, name)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/_dynamo/variables/nn_module.py", line 201, in var_getattr
+    subobj = inspect.getattr_static(base, name)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/inspect.py", line 1772, in getattr_static
+    raise AttributeError(attr)
+torch._dynamo.exc.InternalTorchDynamoError: flash
+
+from user code:
+   File "/Users/ujwal/Desktop/sakana_ai_sol/nanoGPTUjwal/model.py", line 239, in forward
+    x = block(x)
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ujwal/Desktop/sakana_ai_sol/nanoGPTUjwal/model.py", line 161, in forward
+    x = x + self.attn(self.ln_1(x))
+  File "/Users/ujwal/.pyenv/versions/3.10.0/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/ujwal/Desktop/sakana_ai_sol/nanoGPTUjwal/model.py", line 106, in forward
+    if self.flash:
+
+Set TORCH_LOGS="+dynamo" and TORCHDYNAMO_VERBOSE=1 for more information
+
+
+You can suppress this exception and fall back to eager by setting:
+    import torch._dynamo
+    torch._dynamo.config.suppress_errors = True

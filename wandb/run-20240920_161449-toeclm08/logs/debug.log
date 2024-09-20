@@ -1,0 +1,26 @@
+2024-09-20 16:14:49,975 INFO    MainThread:90121 [wandb_setup.py:_flush():77] Current SDK version is 0.18.1
+2024-09-20 16:14:49,976 INFO    MainThread:90121 [wandb_setup.py:_flush():77] Configure stats pid to 90121
+2024-09-20 16:14:49,976 INFO    MainThread:90121 [wandb_setup.py:_flush():77] Loading settings from /Users/ujwal/.config/wandb/settings
+2024-09-20 16:14:49,976 INFO    MainThread:90121 [wandb_setup.py:_flush():77] Loading settings from /Users/ujwal/Desktop/sakana_ai_sol/nanoGPTUjwal/wandb/settings
+2024-09-20 16:14:49,976 INFO    MainThread:90121 [wandb_setup.py:_flush():77] Loading settings from environment variables: {}
+2024-09-20 16:14:49,976 INFO    MainThread:90121 [wandb_setup.py:_flush():77] Applying setup settings: {'mode': None, '_disable_service': None}
+2024-09-20 16:14:49,976 INFO    MainThread:90121 [wandb_setup.py:_flush():77] Inferring run settings from compute environment: {'program_relpath': 'train.py', 'program_abspath': '/Users/ujwal/Desktop/sakana_ai_sol/nanoGPTUjwal/train.py', 'program': '/Users/ujwal/Desktop/sakana_ai_sol/nanoGPTUjwal/train.py'}
+2024-09-20 16:14:49,976 INFO    MainThread:90121 [wandb_setup.py:_flush():77] Applying login settings: {}
+2024-09-20 16:14:49,976 INFO    MainThread:90121 [wandb_init.py:_log_setup():532] Logging user logs to /Users/ujwal/Desktop/sakana_ai_sol/nanoGPTUjwal/wandb/run-20240920_161449-toeclm08/logs/debug.log
+2024-09-20 16:14:49,976 INFO    MainThread:90121 [wandb_init.py:_log_setup():533] Logging internal logs to /Users/ujwal/Desktop/sakana_ai_sol/nanoGPTUjwal/wandb/run-20240920_161449-toeclm08/logs/debug-internal.log
+2024-09-20 16:14:49,976 INFO    MainThread:90121 [wandb_init.py:init():616] calling init triggers
+2024-09-20 16:14:49,976 INFO    MainThread:90121 [wandb_init.py:init():623] wandb.init called with sweep_config: {}
+config: {'out_dir': 'out-enwik8-asadp', 'eval_interval': 500, 'log_interval': 100, 'eval_iters': 200, 'eval_only': False, 'always_save_checkpoint': True, 'init_from': 'scratch', 'wandb_log': True, 'wandb_project': 'enwik8-asadp', 'wandb_run_name': 'gpt2-enwik8-asadp-1726816485.927885', 'dataset': 'enwik8', 'gradient_accumulation_steps': 1, 'batch_size': 64, 'block_size': 1024, 'n_layer': 12, 'n_head': 16, 'n_embd': 768, 'dropout': 0.1, 'bias': False, 'learning_rate': 0.0005, 'max_iters': 150000, 'weight_decay': 0.1, 'beta1': 0.9, 'beta2': 0.95, 'grad_clip': 1.0, 'decay_lr': True, 'warmup_iters': 2000, 'lr_decay_iters': 150000, 'min_lr': 5e-05, 'backend': 'nccl', 'device': 'mps', 'dtype': 'float16', 'compile': True}
+2024-09-20 16:14:49,976 INFO    MainThread:90121 [wandb_init.py:init():666] starting backend
+2024-09-20 16:14:49,976 INFO    MainThread:90121 [wandb_init.py:init():670] setting up manager
+2024-09-20 16:14:49,982 INFO    MainThread:90121 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2024-09-20 16:14:49,984 INFO    MainThread:90121 [wandb_init.py:init():678] backend started and connected
+2024-09-20 16:14:49,987 INFO    MainThread:90121 [wandb_init.py:init():773] updated telemetry
+2024-09-20 16:14:50,002 INFO    MainThread:90121 [wandb_init.py:init():806] communicating run to backend with 90.0 second timeout
+2024-09-20 16:14:51,700 INFO    MainThread:90121 [wandb_init.py:init():857] starting run threads in backend
+2024-09-20 16:14:51,820 INFO    MainThread:90121 [wandb_run.py:_console_start():2459] atexit reg
+2024-09-20 16:14:51,820 INFO    MainThread:90121 [wandb_run.py:_redirect():2307] redirect: wrap_raw
+2024-09-20 16:14:51,820 INFO    MainThread:90121 [wandb_run.py:_redirect():2372] Wrapping output streams.
+2024-09-20 16:14:51,820 INFO    MainThread:90121 [wandb_run.py:_redirect():2397] Redirects installed.
+2024-09-20 16:14:51,822 INFO    MainThread:90121 [wandb_init.py:init():900] run started, returning control to user process
+2024-09-20 16:14:52,283 WARNING MsgRouterThr:90121 [router.py:message_loop():77] message_loop has been closed
